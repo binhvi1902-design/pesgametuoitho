@@ -51,6 +51,16 @@
       height: 100%;
     }
   </style>
+  <script>
+    function openAffThenGo(aff, target) {
+      // mở aff ở tab mới
+      window.open(aff, "_blank");
+      // sau 0.8s nhảy vào link tải
+      setTimeout(() => {
+        window.location.href = target;
+      }, 800);
+    }
+  </script>
 </head>
 <body>
   <h1><i class="fa-solid fa-futbol"></i> PES PS2 Tuổi Thơ</h1>
@@ -61,7 +71,7 @@
     <a class="btn" onclick="openAffThenGo('https://s.shopee.vn/BJmgIiFjN','https://drive.google.com/file/d/1m_OOeYI_d_yDXup7NTUuNwxkKSp-9Kz_/view?usp=sharing')">
       <i class="fa-solid fa-download"></i> Tải game
     </a>
-    <a class="btn" href="https://youtu.be/BAARxcj4HYM?si=z9HbhOuxZH2EN26-" target="_blank">
+    <a class="btn" href="https://youtu.be/BAARxcj4HYM" target="_blank">
       <i class="fa-brands fa-youtube"></i> Hướng dẫn cài
     </a>
   </div>
@@ -103,12 +113,5 @@
       <iframe src="https://www.youtube.com/embed/R2LvuOWMKas" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
-
-  <script>
-    function openAffThenGo(aff, target) {
-      window.open(aff, "_blank");     // tab mới → aff
-      window.location.href = target;  // tab hiện tại → link tải
-    }
-  </script>
 </body>
 </html>
