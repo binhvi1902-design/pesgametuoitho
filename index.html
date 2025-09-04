@@ -7,94 +7,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #b91c1c;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      background: #991b1b;
-      padding: 15px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: 700;
-      z-index: 100;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-    .container { padding: 20px; max-width: 900px; margin: auto; }
-    .banner {
-      width: 100%;
-      border-radius: 16px;
-      margin: 20px 0;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-    }
-    .notice {
-      background: #facc15;
-      color: #000;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-    h2 { margin-top: 15px; margin-bottom: 10px; font-size: 20px; }
-    .box {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-      transition: transform 0.2s ease;
-    }
-    .box:hover { transform: translateY(-4px); }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, #fff, #f3f3f3);
-      color: #b91c1c;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin: 5px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .btn:hover {
-      background: linear-gradient(135deg, #fef2f2, #fff);
-      transform: scale(1.05);
-    }
-    .btn i { font-size: 16px; }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      margin-top: 12px;
-    }
-    .video-container iframe {
-      position: absolute; top:0; left:0; width:100%; height:100%;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      background: #7f1d1d;
-      margin-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.2);
-    }
+    body { font-family:'Poppins',sans-serif; background:#b91c1c; color:#fff; margin:0; padding:0; }
+    header { position:sticky; top:0; background:#991b1b; padding:15px; text-align:center; font-size:22px; font-weight:700; z-index:100; box-shadow:0 2px 6px rgba(0,0,0,.3); }
+    .container { padding:20px; max-width:900px; margin:auto; }
+
+    .banner { width:100%; border-radius:16px; margin:20px 0; box-shadow:0 6px 12px rgba(0,0,0,.4); }
+
+    .notice { background:#facc15; color:#000; padding:12px 18px; border-radius:10px; font-weight:600; margin-bottom:20px; box-shadow:0 3px 8px rgba(0,0,0,.3); text-align:center; }
+
+    .support { text-align:center; margin:20px 0; }
+    .support img { width:200px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.4); margin-bottom:10px; transition:transform .3s ease; }
+    .support img:hover { transform:scale(1.1); }
+    .support p { font-size:15px; color:#fff; font-weight:500; margin:6px 0 0; }
+
+    h2 { margin:15px 0 10px; font-size:20px; }
+    .box { background:rgba(255,255,255,.1); padding:20px; border-radius:16px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,.25); transition:transform .2s ease; }
+    .box:hover { transform:translateY(-4px); }
+
+    .btn { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#fff,#f3f3f3); color:#b91c1c; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:600; margin:5px; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.3); transition:background .3s ease, transform .2s ease; }
+    .btn:hover { background:linear-gradient(135deg,#fef2f2,#fff); transform:scale(1.05); }
+    .btn i { font-size:16px; }
+
+    .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:12px; }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
+
+    footer { text-align:center; padding:15px; font-size:14px; background:#7f1d1d; margin-top:30px; border-top:1px solid rgba(255,255,255,.2); }
   </style>
   <script>
     function openAffThenGo(aff, target) {
-      window.open(aff, "_blank"); 
+      window.open(aff, "_blank");
       setTimeout(() => { window.location.href = target; }, 800);
     }
   </script>
@@ -108,9 +49,14 @@
 
     <!-- Lưu ý -->
     <div class="notice">
-      ⚠️ LƯU Ý: Bản <b>PES giả lập</b> cần phải cài <b>giả lập PS2</b> mới chơi được nhé!!! 
-      <br>
+      ⚠️ LƯU Ý: Bản <b>PES giả lập</b> cần phải cài <b>giả lập PS2</b> mới chơi được nhé!!! <br>
       Còn bản <b>ĐNK PC</b> chơi thẳng trên PC được luôn nhé anh em!!!
+    </div>
+
+    <!-- QR Ủng hộ -->
+    <div class="support">
+      <img src="./qr-bank.png" alt="QR Bank">
+      <p>☕ AE thấy hay thì ủng hộ mình cốc trà đá nhé! Cảm ơn anh em rất nhiều ❤️</p>
     </div>
 
     <!-- PES6 PC -->
@@ -124,23 +70,15 @@
       </a>
     </div>
 
-    <!-- PES6 Vleague -->
+    <!-- PES 2024 (nút bẫy aff) -->
     <div class="box">
-      <h2>PES6 Đồng Như Kiều Việt Hoá bản Vleague (BẢN NÀY PHẢI CÀI GIẢ LẬP)</h2>
-      <a class="btn" href="https://drive.google.com/file/d/1d06x8-eV5-m_QHQNcxuWw7KtHrmA9iD9/view?usp=sharing" target="_blank">
+      <h2>PES2024-2025 BLV tiếng Việt (Giả lập)</h2>
+      <a class="btn" onclick="openAffThenGo('https://s.shopee.vn/1BCM7upMTa','https://drive.google.com/file/d/1c1WawbdUVybPHWx81BYZuJvDUarSOGjG/view?usp=sharing')">
         <i class="fa-solid fa-download"></i> Tải game
       </a>
     </div>
 
-    <!-- PES 2024 (chỉ game này bẫy aff) -->
-    <div class="box">
-      <h2>PES2024-2025 BLV tiếng Việt (BẢN NÀY PHẢI CÀI GIẢ LẬP! XEM HƯỚNG DẪN NHƯ Ở VDO DƯỚI NHÉ)</h2>
-      <a class="btn" onclick="openAffThenGo('https://s.shopee.vn/9AEwXY512e','https://drive.google.com/file/d/1c1WawbdUVybPHWx81BYZuJvDUarSOGjG/view?usp=sharing')">
-        <i class="fa-solid fa-download"></i> Tải game
-      </a>
-    </div>
-
-    <!-- Giả lập PC -->
+    <!-- Giả lập PCSX2 -->
     <div class="box">
       <h2>Giả lập PCSX2 (chơi trên PC)</h2>
       <a class="btn" href="https://drive.google.com/file/d/1AKOuctjn-F83O8oP7GPJBY9T7el9aqj3/view?usp=sharing" target="_blank">
@@ -150,21 +88,8 @@
         <iframe src="https://www.youtube.com/embed/hT3gLNwQJ7I" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-
-    <!-- Giả lập Android -->
-    <div class="box">
-      <h2>Giả lập AetherSX2 (Android)</h2>
-      <a class="btn" href="https://romsfun.com/emulators/aethersx2.html" target="_blank">
-        <i class="fa-solid fa-download"></i> Tải giả lập
-      </a>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/R2LvuOWMKas" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
   </div>
 
-  <footer>
-    © 2025 PES Tuổi Thơ. All rights reserved.
-  </footer>
+  <footer>© 2025 PES Tuổi Thơ. All rights reserved.</footer>
 </body>
 </html>
