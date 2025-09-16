@@ -20,12 +20,43 @@
       margin: 0 auto;
     }
 
-    .tabs { display:flex; justify-content:center; background:#7f1d1d; }
-    .tabs button {
-      flex:1; padding:12px; border:none; background:#7f1d1d; color:#fff; font-weight:600;
-      cursor:pointer; transition:.3s;
+    /* Tabs */
+    .tabs {
+      display:flex;
+      justify-content:center;
+      background:#7f1d1d;
+      gap: 8px;
+      padding: 8px;
     }
-    .tabs button.active { background:#facc15; color:#000; }
+
+    .tabs button {
+      flex:1;
+      padding:12px;
+      border:none;
+      background:#991b1b;
+      color:#fff;
+      font-weight:600;
+      font-size:16px;
+      border-radius:8px;
+      cursor:pointer;
+      transition:all 0.3s ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .tabs button:hover {
+      background:#dc2626;
+    }
+
+    .tabs button.active {
+      background:#facc15;
+      color:#000;
+      box-shadow:0 4px 10px rgba(0,0,0,.3);
+    }
+
+    /* Nội dung */
     .tab-content { display:none; padding:20px; max-width:900px; margin:auto; }
     .tab-content.active { display:block; }
     .box { background:rgba(255,255,255,.1); padding:20px; border-radius:16px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,.25); }
@@ -70,8 +101,12 @@
 
   <!-- Tabs -->
   <div class="tabs">
-    <button class="active" onclick="openTab(event,'pc')">Game PC</button>
-    <button onclick="openTab(event,'gialap')">Game Giả lập</button>
+    <button class="active" onclick="openTab(event,'pc')">
+      <i class="fa-solid fa-hand-point-right"></i> BÓNG PES6 CHƠI NGAY TRÊN PC
+    </button>
+    <button onclick="openTab(event,'gialap')">
+      <i class="fa-solid fa-hand-point-right"></i> BÓNG BẢN KHÁC CHƠI TRÊN GIẢ LẬP
+    </button>
   </div>
 
   <!-- Tab PC -->
