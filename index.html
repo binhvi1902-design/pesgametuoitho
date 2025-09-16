@@ -54,10 +54,6 @@
     footer { text-align:center; padding:15px; font-size:14px; background:#7f1d1d; margin-top:30px; }
   </style>
   <script>
-    function openAffThenGo(aff, target) {
-      window.open(aff, "_blank");
-      setTimeout(()=>{ window.location.href = target; },800);
-    }
     function openTab(evt, tabId) {
       document.querySelectorAll(".tab-content").forEach(el=>el.classList.remove("active"));
       document.querySelectorAll(".tabs button").forEach(el=>el.classList.remove("active"));
@@ -107,7 +103,7 @@
 
     <div class="box">
       <h2>PES2024-2025 BLV tiếng Việt (Giả lập)</h2>
-      <a class="btn" onclick="openAffThenGo('https://s.shopee.vn/1BCM7upMTa','https://drive.google.com/file/d/1c1WawbdUVybPHWx81BYZuJvDUarSOGjG/view?usp=sharing')">
+      <a class="btn" href="https://drive.google.com/file/d/1c1WawbdUVybPHWx81BYZuJvDUarSOGjG/view?usp=sharing" target="_blank">
         <i class="fa-solid fa-download"></i> Tải game
       </a>
     </div>
