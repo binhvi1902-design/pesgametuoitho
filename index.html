@@ -41,6 +41,9 @@
       background: #7f1d1d;
       color: white;
       transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .tab.active {
       background: #facc15;
@@ -147,8 +150,11 @@
 
   <!-- Tabs -->
   <div class="tabs">
-    <button class="tab active" onclick="showTab('pc')">BÓNG PES6 ĐNK CHƠI THẲNG TRÊN PC</button>
-    <button class="tab" onclick="showTab('emulator')">BÓNG CHƠI TRÊN GIẢ LẬP (AE PHẢI CÀI GIẢ LẬP TRƯỚC NHÉ)</button>
+    <button class="tab active" onclick="showTab('pc')">
+      <i class="fa-solid fa-hand-point-right"></i> BÓNG PES6 ĐỒNG NHƯ KIỀU CÀI CHƠI THẲNG TRÊN PC
+    </button>
+    <button class="tab" onclick="showTab('emulator')">
+      <i class="fa-solid fa-hand-point-right"></i> BÓNG PES25 CHƠI TRÊN GIẢ LẬP
   </div>
 
   <!-- Tab PC -->
@@ -213,11 +219,14 @@
       event.target.classList.add('active');
     }
 
-    // Hiện popup khi load trang
+    // Hiện popup khi load trang (chỉ 1 lần duy nhất)
     window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("popup").style.display = "flex";
-      }, 1000);
+      if (!localStorage.getItem("popupShown")) {
+        setTimeout(() => {
+          document.getElementById("popup").style.display = "flex";
+          localStorage.setItem("popupShown", "true");
+        }, 1000);
+      }
     });
 
     // Đóng popup + mở aff link
