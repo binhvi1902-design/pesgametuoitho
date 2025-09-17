@@ -153,7 +153,7 @@
     <button class="tab active" onclick="showTab('pc')">
       <i class="fa-solid fa-hand-point-right"></i> Game PC
     </button>
-    <button class="tab" onclick="showTab('emulator')">
+    <button class="tab" onclick="showTab('emulator', true)">
       <i class="fa-solid fa-hand-point-right"></i> Game Giả lập
     </button>
   </div>
@@ -213,22 +213,20 @@
   </div>
 
   <script>
-    function showTab(tabId) {
+    function showTab(tabId, checkPopup = false) {
       document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
-    }
 
-    // Hiện popup khi load trang (chỉ 1 lần trong 1 tab)
-    window.addEventListener("load", () => {
-      if (!sessionStorage.getItem("popupShown")) {
+      // Nếu bấm vào tab giả lập và popup chưa hiện lần nào thì show
+      if (checkPopup && !sessionStorage.getItem("popupShown")) {
         setTimeout(() => {
           document.getElementById("popup").style.display = "flex";
           sessionStorage.setItem("popupShown", "true");
-        }, 1000);
+        }, 500);
       }
-    });
+    }
 
     // Đóng popup + mở aff link
     function closePopup() {
