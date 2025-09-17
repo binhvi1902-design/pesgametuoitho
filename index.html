@@ -233,6 +233,32 @@
       window.open("https://s.shopee.vn/70AntrCMYY", "_blank");
       document.getElementById("popup").style.display = "none";
     }
+
+    /* Vuốt để chuyển tab */
+    let startX = 0;
+
+    document.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    document.addEventListener("touchend", (e) => {
+      let endX = e.changedTouches[0].clientX;
+      let diff = startX - endX;
+
+      if (Math.abs(diff) > 50) { // Vuốt đủ dài
+        if (diff > 0) {
+          // Vuốt trái → sang tab Giả lập
+          showTab('emulator', true);
+          document.querySelectorAll('.tab')[1].classList.add('active');
+          document.querySelectorAll('.tab')[0].classList.remove('active');
+        } else {
+          // Vuốt phải → sang tab PC
+          showTab('pc');
+          document.querySelectorAll('.tab')[0].classList.add('active');
+          document.querySelectorAll('.tab')[1].classList.remove('active');
+        }
+      }
+    });
   </script>
 </body>
 </html>
